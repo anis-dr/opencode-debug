@@ -150,8 +150,8 @@ function getLogDisplayPath(): string {
   return `${config.logDir}/${config.logFileName}`;
 }
 
-const DebugPlugin: Plugin = async (ctx) => {
-  const LOG_PATH = getLogPath(ctx.directory);
+export const DebugPlugin: Plugin = async ({ directory }) => {
+  const LOG_PATH = getLogPath(directory);
 
   return {
     auth: {

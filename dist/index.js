@@ -13063,8 +13063,8 @@ function getLogPath(directory) {
 function getLogDisplayPath() {
   return `${config2.logDir}/${config2.logFileName}`;
 }
-var DebugPlugin = async (ctx) => {
-  const LOG_PATH = getLogPath(ctx.directory);
+var DebugPlugin = async ({ directory }) => {
+  const LOG_PATH = getLogPath(directory);
   return {
     auth: {
       provider: config2.authProvider,
@@ -13192,5 +13192,6 @@ ${output.join(`
 var src_default = DebugPlugin;
 export {
   src_default as default,
-  configure
+  configure,
+  DebugPlugin
 };
