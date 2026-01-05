@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@thecto/opencode-debug-plugin",
+  "version": "1.0.0",
+  "description": "Debug HTTP server plugin for OpenCode with ngrok tunneling support",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "author": "The CTO",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecto/opencode-debug-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thecto/opencode-debug-plugin/issues"
+  },
+  "homepage": "https://github.com/thecto/opencode-debug-plugin#readme",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "debug",
+    "debugging",
+    "remote-debugging",
+    "ngrok",
+    "plugin"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "bun build src/index.ts --outdir dist --target node && tsc --emitDeclarationOnly --declaration --outDir dist",
+    "prepublishOnly": "bun run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.1.1",
+    "@ngrok/ngrok": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "latest",
+    "typescript": "^5.7.3"
+  }
+}
