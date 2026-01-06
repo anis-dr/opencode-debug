@@ -8,7 +8,7 @@ Add the plugin to your OpenCode configuration:
 
 ```json
 {
-  "plugin": ["@thecto/opencode-debug-plugin"]
+  "plugin": ["@thecto/opencode-debug-plugin@latest"]
 }
 ```
 
