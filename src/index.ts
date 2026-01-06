@@ -21,11 +21,7 @@ const defaultConfig: PluginConfig = {
   authPromptMessage: "Enter your Ngrok Authtoken",
 };
 
-let config: PluginConfig = { ...defaultConfig };
-
-export function configure(overrides: Partial<PluginConfig>): void {
-  config = { ...defaultConfig, ...overrides };
-}
+const config: PluginConfig = { ...defaultConfig };
 
 async function isPortInUse(port: number): Promise<boolean> {
   return new Promise((resolve) => {
@@ -279,8 +275,5 @@ export const DebugPlugin: Plugin = async ({ directory }) => {
         },
       }),
     },
-    config: async () => {},
   };
 };
-
-// export default DebugPlugin;
